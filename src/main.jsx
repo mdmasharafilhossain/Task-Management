@@ -9,6 +9,8 @@ import {
 import MainLayout from './Components/MainLayout/MainLayout';
 import Home from './Components/Home/Home/Home';
 import Register from './Components/Navbar/Register/Register';
+import Dashboard from './Components/Dashboard/Dashboard';
+import AddNewTask from './Components/Dashboard/AddNewTask/AddNewTask';
 
 const router = createBrowserRouter([
   {
@@ -29,7 +31,16 @@ const router = createBrowserRouter([
     ]
   },
   {
-    path:"/dashboard"
+    path:"/dashboard",
+    element:<Dashboard></Dashboard>,
+    children:[
+        
+         {
+          path:"/dashboard/newTask",
+          element:<AddNewTask></AddNewTask>
+         }
+
+    ]
   }
 ]);
 
