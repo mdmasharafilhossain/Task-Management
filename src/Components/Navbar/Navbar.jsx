@@ -20,6 +20,14 @@ const Navbar = () => {
         >
             Register
         </NavLink></li>
+    <li><NavLink
+            to="/dashboard" style={{ fontWeight: "bold", fontSize: "20px", }}
+            className={({ isActive, isPending }) =>
+                isPending ? "pending" : isActive ? "text-black border-2 border-sky-600" : ""
+            }
+        >
+            Dashboard
+        </NavLink></li>
     
     
     
@@ -42,7 +50,7 @@ const Navbar = () => {
                         <img className='h-10' src={logo} alt="" />
                     </div>
                     <div className="navbar-center hidden lg:flex">
-                        <ul className="menu menu-horizontal bg-none px-1">
+                        <ul className="menu menu-horizontal  px-1">
                             {NavLinks}
                         </ul>
                     </div>
