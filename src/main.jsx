@@ -16,6 +16,8 @@ import {
   QueryClientProvider,
   
 } from '@tanstack/react-query'
+import PreviousTask from './Components/Dashboard/PreviouTask/PreviousTask';
+import Login from './Components/Navbar/Login/Login';
 
 const queryClient = new QueryClient()
 
@@ -32,6 +34,10 @@ const router = createBrowserRouter([
       {
         path:"/register",
         element:<Register></Register>
+      },
+      {
+        path:"/login",
+        element:<Login></Login>
       }
 
 
@@ -45,6 +51,10 @@ const router = createBrowserRouter([
          {
           path:"/dashboard/newTask",
           element:<AddNewTask></AddNewTask>
+         },
+         {
+          path:"/dashboard/previous",
+          element:<PreviousTask></PreviousTask>
          }
 
     ]

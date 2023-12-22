@@ -24,7 +24,7 @@ const Dashboard = () => {
       {/* Sidebar content here */}
       <ul className="menu p-4 py-auto"> 
                 <li className="font-bold text-xl text-white"><NavLink to="/dashboard/newTask"><IoMdAdd  className="text-xl font-bold"/>Create New Task</NavLink></li>
-                <li className="font-bold text-xl text-white"><NavLink to="/"><GrPrevious />Previous Task</NavLink></li>
+                <li className="font-bold text-xl text-white"><NavLink to="/dashboard/previous"><GrPrevious />Previous Task</NavLink></li>
                 <li className="font-bold text-xl ml-1 text-white"><NavLink to="/"><FaHome />Go Home</NavLink></li>
                 
                 
