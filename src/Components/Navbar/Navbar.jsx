@@ -66,7 +66,7 @@ const Navbar = () => {
                     <div className="navbar-end flex lg:mr-5 lg:space-x-1">
                         
                     <div>
-                            <h2 className="mt-2 lg:text-xl font-bold text-sky-600">{user?.displayName
+                            <h2 className="hidden md:block lg:block mt-2  lg:text-xl font-bold text-sky-600">{user?.displayName
 
                             }</h2>
                         </div> 

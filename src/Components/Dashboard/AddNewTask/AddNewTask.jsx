@@ -1,10 +1,12 @@
 import { useForm } from "react-hook-form"
 import UseAxios from "../../UseAxios/UseAxios";
 import Swal from "sweetalert2";
+import { useContext } from "react";
+import { AuthContext } from "../../AuthProviders/AuthProviders";
 
 const AddNewTask = () => {
     const { register, handleSubmit } = useForm();
-
+    const { user } = useContext(AuthContext);
     const Axios = UseAxios();
     const onSubmit = (data) => {
      
@@ -14,7 +16,7 @@ const AddNewTask = () => {
         title:data.title,
         deadline:data.deadline,
         description:data.description,
-        email:data.email,
+        email:user?.email,
         priority:data.priority
 
     }
@@ -97,6 +99,8 @@ const AddNewTask = () => {
                         <input 
                         {...register("email")}
                          type="email" 
+                         defaultValue={user?.email}
+                         readOnly
                          placeholder="Write Your Email"  required
                          className="input input-bordered w-full border-2 border-sky-600" />
                         
