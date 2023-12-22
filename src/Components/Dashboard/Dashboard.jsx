@@ -26,7 +26,7 @@ const Dashboard = () => {
     <ul className="menu p-4 w-80 min-h-full bg-sky-600 text-base-content">
 
       <div className="space-y-2 mb-10">
-        <img className="w-28 ml-20 mt-10" src={user?.photoURL} alt="" />
+        <img className="w-28 ml-20 mt-10 rounded-full" src={user?.photoURL} alt="" />
         <h1 className="text-lg text-white font-bold ml-5 ">{user?.displayName}</h1>
       </div>
       {/* Sidebar content here */}

@@ -11,7 +11,7 @@ const Banner = () => {
     <div className="">
       <h1 className="mb-5 text-5xl text-white  font-bold">You Are In Problem For Task Management?</h1>
      
-      <Link to="/dashboard"><button className="btn btn-primary bg-sky-500 border-none hover:bg-sky-700 text-xl">Let's Explore</button></Link>
+      <Link to="/dashboard"><button className="btn btn-primary bg-sky-500 border-none hover:bg-sky-700 text-xl font-bold text-white">Let's Explore</button></Link>
     </div>
   </div>
 </div>

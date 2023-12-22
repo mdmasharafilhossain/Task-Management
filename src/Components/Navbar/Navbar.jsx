@@ -84,7 +84,7 @@ const Navbar = () => {
                         hover:bg-red-100 font-bold text-lg px-4 py-2 rounded-xl">
                             SignOut</button>
                         : 
-                        <Link to="/login"><button className=" text-red-700 border-4 border-red-600
+                        <Link to="/login"><button className=" text-sky-700 border-4 border-sky-600
                         hover:bg-red-100 font-bold text-lg px-4 py-2 rounded-xl">Sign In</button></Link>
                        }
 
