@@ -2,6 +2,7 @@ import { useQuery } from "@tanstack/react-query";
 import UseAxios from "../../UseAxios/UseAxios";
 import { useContext } from "react";
 import { AuthContext } from "../../AuthProviders/AuthProviders";
+import { Link } from "react-router-dom";
 
 
 const PreviousTask = () => {
@@ -17,7 +18,11 @@ const PreviousTask = () => {
 
         }
 
-    })
+    });
+
+     
+
+
     return (
         <div>
            <h2 className="text-4xl text-sky-600 font-bold text-center mt-5">Total Task: {task.length}</h2> 
@@ -33,7 +38,7 @@ const PreviousTask = () => {
                        <h2 className="text-xl mt-4">{work.description}</h2> 
 
                        <div className="flex justify-around mt-4">
-                         <h1 className="font-bold ">Due: {work.deadline}</h1>
+                         <h1 className="font-bold text-lg">Due: {work.deadline}</h1>
                          <p className="border-2 rounded-lg text-white bg-sky-500 p-2 font-bold">{work.priority}</p>
                        </div>
 
@@ -41,7 +46,8 @@ const PreviousTask = () => {
                        <div className="flex gap-5 mt-5">
 
                         <button className="btn w-full flex-1 bg-sky-500 text-white">Delete Task</button>
-                        <button className="btn w-full flex-1  bg-sky-500 text-white" >Update Task</button>
+                        <Link
+                        className="flex-1" to={`/update/${work._id}`}><button className="btn w-full flex-1 bg-sky-500 text-white">Update Details</button></Link>
 
                        </div>
                    </div>

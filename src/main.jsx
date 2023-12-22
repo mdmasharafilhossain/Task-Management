@@ -56,6 +56,10 @@ const router = createBrowserRouter([
          {
           path:"/dashboard/previous",
           element:<PreviousTask></PreviousTask>
+         },
+         {
+          path:"/update/:_id",
+          
          }
 
     ]
