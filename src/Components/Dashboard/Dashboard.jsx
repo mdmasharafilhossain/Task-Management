@@ -3,9 +3,13 @@ import { IoMdAdd } from "react-icons/io";
 import { FaHome } from "react-icons/fa";
 import { GrPrevious } from "react-icons/gr";
 import { FiAlignJustify } from "react-icons/fi";
-import { useContext } from "react";
+import { useContext, useEffect } from "react";
 import { AuthContext } from "../AuthProviders/AuthProviders";
+import Welcome from "../Welcome/Welcome";
 const Dashboard = () => {
+  useEffect(()=>{
+    document.title = "TaskHub | Dashboard"
+  },[]);
   const { user} = useContext(AuthContext);
     return (
         <div>
@@ -45,6 +49,7 @@ const Dashboard = () => {
                </div>
                {/* outlet div */}
                <div className="flex-1">
+                
                 <Outlet></Outlet>
                </div>
             </div>

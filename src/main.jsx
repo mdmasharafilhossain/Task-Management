@@ -20,6 +20,7 @@ import PreviousTask from './Components/Dashboard/PreviouTask/PreviousTask';
 import Login from './Components/Navbar/Login/Login';
 import AuthProviders from './Components/AuthProviders/AuthProviders';
 import UpdateTask from './Components/Dashboard/PreviouTask/UpdateTask/UpdateTask';
+import Welcome from './Components/Welcome/Welcome';
 
 const queryClient = new QueryClient()
 
@@ -63,6 +64,10 @@ const router = createBrowserRouter([
           path:"/dashboard/previous",
           element:<PreviousTask></PreviousTask>
          },
+         {
+          path:"/dashboard/welcome",
+          element:<Welcome></Welcome>
+         }
          
 
     ]
