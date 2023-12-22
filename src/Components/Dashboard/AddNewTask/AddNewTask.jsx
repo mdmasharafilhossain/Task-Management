@@ -112,7 +112,7 @@ const AddNewTask = () => {
                     </select>
                     </div>
                     
-                    <input className="btn w-full bg-sky-600 text-white" type="submit" />
+                    <input className="btn w-full  bg-sky-600 text-white" type="submit" />
                 </form>
             </div>
             </div>
