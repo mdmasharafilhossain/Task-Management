@@ -66,21 +66,21 @@ const Navbar = () => {
                     <div className="navbar-end flex lg:mr-5 lg:space-x-1">
                         
                     <div>
-                            <h2 className="mt-4 text-base font-bold text-orange-600-600">{user?.displayName
+                            <h2 className="mt-4 lg:text-xl font-bold text-sky-600">{user?.displayName
 
                             }</h2>
                         </div> 
                         <div>
                      <label tabIndex={0} className="btn btn-ghost btn-circle avatar">
-                                    <Link to="/UserProfile"><div className="w-12 rounded-full mt-3">
-                                        <img src={user?.photoURL} />
+                                    <Link to="/UserProfile"><div className="w-10 rounded-full mt-3">
+                                        <img className="border-2 border-sky-600" src={user?.photoURL} />
                                     </div></Link>
                                 </label>
                         </div>
                         <div>
                        {
                         user? 
-                        <button onClick={handleLogOut} className=" text-red-700 border-4 border-red-600
+                        <button onClick={handleLogOut} className=" text-sky-700 border-4 border-sky-600
                         hover:bg-red-100 font-bold text-lg px-4 py-2 rounded-xl">
                             SignOut</button>
                         : 
