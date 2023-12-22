@@ -3,7 +3,10 @@ import { IoMdAdd } from "react-icons/io";
 import { FaHome } from "react-icons/fa";
 import { GrPrevious } from "react-icons/gr";
 import { FiAlignJustify } from "react-icons/fi";
+import { useContext } from "react";
+import { AuthContext } from "../AuthProviders/AuthProviders";
 const Dashboard = () => {
+  const { user} = useContext(AuthContext);
     return (
         <div>
             <div className="flex">
@@ -21,6 +24,11 @@ const Dashboard = () => {
   <div className="drawer-side">
     <label htmlFor="my-drawer-2" aria-label="close sidebar" className="drawer-overlay"></label> 
     <ul className="menu p-4 w-80 min-h-full bg-sky-600 text-base-content">
+
+      <div className="space-y-2 mb-10">
+        <img className="w-28 ml-20" src={user?.photoURL} alt="" />
+        <h1 className="text-lg text-white font-bold ml-5 ">{user?.displayName}</h1>
+      </div>
       {/* Sidebar content here */}
       <ul className="menu p-4 py-auto"> 
                 <li className="font-bold text-xl text-white"><NavLink to="/dashboard/newTask"><IoMdAdd  className="text-xl font-bold"/>Create New Task</NavLink></li>
