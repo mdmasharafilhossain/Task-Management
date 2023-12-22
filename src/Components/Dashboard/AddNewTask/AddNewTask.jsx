@@ -1,10 +1,13 @@
 import { useForm } from "react-hook-form"
 import UseAxios from "../../UseAxios/UseAxios";
 import Swal from "sweetalert2";
-import { useContext } from "react";
+import { useContext, useEffect } from "react";
 import { AuthContext } from "../../AuthProviders/AuthProviders";
 
 const AddNewTask = () => {
+    useEffect(()=>{
+        document.title = "TaskHub | Create New Task"
+      },[]);
     const { register, handleSubmit } = useForm();
     const { user } = useContext(AuthContext);
     const Axios = UseAxios();

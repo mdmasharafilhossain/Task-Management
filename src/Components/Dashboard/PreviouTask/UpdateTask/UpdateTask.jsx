@@ -1,9 +1,13 @@
 import { useLoaderData, useNavigate, useParams } from "react-router-dom";
 import Swal from "sweetalert2";
 import UseAxios from "../../../UseAxios/UseAxios";
+import { useEffect } from "react";
 
 
 const UpdateTask = () => {
+    useEffect(()=>{
+        document.title = "TaskHub | Update Task"
+      },[]);
     const navigate = useNavigate();
     const Axios = UseAxios();
     const TaskCard = useLoaderData();

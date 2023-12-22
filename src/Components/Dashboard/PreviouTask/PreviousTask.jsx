@@ -1,12 +1,15 @@
 import { useQuery } from "@tanstack/react-query";
 import UseAxios from "../../UseAxios/UseAxios";
-import { useContext } from "react";
+import { useContext, useEffect } from "react";
 import { AuthContext } from "../../AuthProviders/AuthProviders";
 import { Link } from "react-router-dom";
 import Swal from "sweetalert2";
 
 
 const PreviousTask = () => {
+    useEffect(()=>{
+        document.title = "TaskHub | All Task"
+      },[]);
     const { user } = useContext(AuthContext);
     const Axios = UseAxios();
     const { refetch, data: task = [] } = useQuery({
