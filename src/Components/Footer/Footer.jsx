@@ -3,7 +3,7 @@ import logo from '../../assets/62ec0ed2413e5264826c4850_TaskHub_Horizontal_Logo.
 const Footer = () => {
     return (
         <div>
-           <div className="mt-10">
+           <div  className="mt-10">
             <footer className="footer footer-center p-10 bg-white border-2 border-sky-700 text-primary-content">
                 <aside>
                     <img className="w-32" src={logo} alt="" />
