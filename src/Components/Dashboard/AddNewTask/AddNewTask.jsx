@@ -60,7 +60,7 @@ const AddNewTask = () => {
                         {...register("title")}
                          type="text" 
                          placeholder="Write Title of your task"  required
-                         className="input input-bordered w-full" />
+                         className="input input-bordered w-full border-2 border-sky-600" />
                         
                     </label>
                     <label className="form-control w-full ">
@@ -72,7 +72,7 @@ const AddNewTask = () => {
                         {...register("deadline")}
                          type="date" 
                          placeholder="Name Of The Article Title"  required
-                         className="input input-bordered w-full" />
+                         className="input input-bordered w-full border-2 border-sky-600" />
                         
                     </label>
                     </div>
@@ -85,7 +85,7 @@ const AddNewTask = () => {
                         {...register("description")}
                          type="text" 
                          placeholder="Description Of The Article Title"  required
-                         className="input input-bordered w-full " />
+                         className="input input-bordered w-full border-2 border-sky-600" />
                         
                     </label>
                     <div className="flex gap-5">
@@ -98,11 +98,11 @@ const AddNewTask = () => {
                         {...register("email")}
                          type="email" 
                          placeholder="Write Your Email"  required
-                         className="input input-bordered w-full" />
+                         className="input input-bordered w-full border-2 border-sky-600" />
                         
                     </label>
                     <select {...register("priority")}
-                        className="select select-bordered w-full mt-9">
+                        className="select select-bordered w-full mt-9 border-2 border-sky-600">
                         <option disabled selected>Select Priority</option>
                         <option value="High">High</option>
                         <option value="Moderate">Moderate</option>
