@@ -3,12 +3,13 @@ import UseAxios from "../../UseAxios/UseAxios";
 import { useContext } from "react";
 import { AuthContext } from "../../AuthProviders/AuthProviders";
 import { Link } from "react-router-dom";
+import Swal from "sweetalert2";
 
 
 const PreviousTask = () => {
     const { user } = useContext(AuthContext);
     const Axios = UseAxios();
-    const {  data: task = [] } = useQuery({
+    const { refetch, data: task = [] } = useQuery({
         queryKey: ['task',user?.email],
         
         queryFn: async () => {
@@ -20,7 +21,32 @@ const PreviousTask = () => {
 
     });
 
-     
+     const handleDelete = work =>{
+        Swal.fire({
+            title: "Are you sure?",
+            text: "You won't be able to revert this!",
+            icon: "warning",
+            showCancelButton: true,
+            confirmButtonColor: "#3085d6",
+            cancelButtonColor: "#d33",
+            confirmButtonText: "Yes, delete it!"
+          }).then(async (result) => {
+            if (result.isConfirmed) {
+                const res = await Axios.delete(`/tasks/delete/${work._id}`);
+                console.log(res.data);
+            if(res.data.deletedCount){
+                refetch();
+                Swal.fire({
+                    position: "top-end",
+                    icon: "success",
+                    title: "Delete SuccessFully",
+                    showConfirmButton: false,
+                    timer: 1500
+                  });
+            }
+            }
+          });
+     }
 
 
     return (
@@ -45,7 +71,9 @@ const PreviousTask = () => {
                        {/* button div */}
                        <div className="flex gap-5 mt-5">
 
-                        <button className="btn w-full flex-1 bg-sky-500 text-white">Delete Task</button>
+                        <button 
+                        onClick={()=>handleDelete(work)}
+                        className="btn w-full flex-1 bg-sky-500 text-white">Delete Task</button>
                         <Link
                         className="flex-1" to={`/update/${work._id}`}><button className="btn w-full flex-1 bg-sky-500 text-white">Update Details</button></Link>
 

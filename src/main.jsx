@@ -19,6 +19,7 @@ import {
 import PreviousTask from './Components/Dashboard/PreviouTask/PreviousTask';
 import Login from './Components/Navbar/Login/Login';
 import AuthProviders from './Components/AuthProviders/AuthProviders';
+import UpdateTask from './Components/Dashboard/PreviouTask/UpdateTask/UpdateTask';
 
 const queryClient = new QueryClient()
 
@@ -39,6 +40,11 @@ const router = createBrowserRouter([
       {
         path:"/login",
         element:<Login></Login>
+      },
+      {
+        path:"/update/:_id",
+        element:<UpdateTask></UpdateTask>,
+        loader:()=>fetch('http://localhost:5000/tasks')
       }
 
 
@@ -57,10 +63,7 @@ const router = createBrowserRouter([
           path:"/dashboard/previous",
           element:<PreviousTask></PreviousTask>
          },
-         {
-          path:"/update/:_id",
-          
-         }
+         
 
     ]
   }
