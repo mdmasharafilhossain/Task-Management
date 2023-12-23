@@ -21,6 +21,7 @@ import Login from './Components/Navbar/Login/Login';
 import AuthProviders from './Components/AuthProviders/AuthProviders';
 import UpdateTask from './Components/Dashboard/PreviouTask/UpdateTask/UpdateTask';
 import Welcome from './Components/Welcome/Welcome';
+import PrivateRoutes from './Components/PrivateRoutes/PrivateRoutes';
 
 const queryClient = new QueryClient()
 
@@ -45,7 +46,7 @@ const router = createBrowserRouter([
       {
         path:"/update/:_id",
         element:<UpdateTask></UpdateTask>,
-        loader:()=>fetch('http://localhost:5000/tasks')
+        loader:()=>fetch('https://task-hub-server-six.vercel.app/tasks')
       }
 
 
@@ -53,16 +54,16 @@ const router = createBrowserRouter([
   },
   {
     path:"/dashboard",
-    element:<Dashboard></Dashboard>,
+    element:<PrivateRoutes><Dashboard></Dashboard></PrivateRoutes>,
     children:[
         
          {
           path:"/dashboard/newTask",
-          element:<AddNewTask></AddNewTask>
+          element:<PrivateRoutes><AddNewTask></AddNewTask></PrivateRoutes>
          },
          {
           path:"/dashboard/previous",
-          element:<PreviousTask></PreviousTask>
+          element:<PrivateRoutes><PreviousTask></PreviousTask></PrivateRoutes>
          },
          {
           path:"/dashboard/welcome",

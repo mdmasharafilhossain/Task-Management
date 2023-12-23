@@ -29,7 +29,10 @@ const Navbar = () => {
         >
             Register
         </NavLink></li>
-    <li><NavLink
+    {
+        user? 
+        <>
+        <li><NavLink
             to="/dashboard" style={{ fontWeight: "bold", fontSize: "20px", }}
             className={({ isActive, isPending }) =>
                 isPending ? "pending" : isActive ? "text-black border-2 border-sky-600" : ""
@@ -37,6 +40,12 @@ const Navbar = () => {
         >
             Dashboard
         </NavLink></li>
+        </>
+         : 
+         <>
+         
+         </>
+    }
     
     
     

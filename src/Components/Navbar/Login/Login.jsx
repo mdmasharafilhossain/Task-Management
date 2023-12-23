@@ -29,7 +29,7 @@ const Login = () => {
               icon: 'success',
               confirmButtonText: 'Ok'
             })
-            navigate("/dashboard")
+            navigate("/dashboard/welcome")
         })
         .catch(error =>{
           console.error(error);
