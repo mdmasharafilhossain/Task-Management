@@ -5,6 +5,7 @@ import Banner from "../Banner/Banner";
 import Beneficial from "../Beneficial/Beneficial";
 
 
+
 const Home = () => {
   useEffect(()=>{
     document.title = "TaskHub | Home"
@@ -14,6 +15,7 @@ const Home = () => {
           <Banner></Banner>
           <Beneficial></Beneficial>
           <ShowModal></ShowModal>
+          
           <Footer></Footer>  
         </div>
     );

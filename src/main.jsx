@@ -22,6 +22,7 @@ import AuthProviders from './Components/AuthProviders/AuthProviders';
 import UpdateTask from './Components/Dashboard/PreviouTask/UpdateTask/UpdateTask';
 import Welcome from './Components/Welcome/Welcome';
 import PrivateRoutes from './Components/PrivateRoutes/PrivateRoutes';
+import ErrorPage from './Components/ErrorPage/ErrorPage';
 
 const queryClient = new QueryClient()
 
@@ -29,6 +30,7 @@ const router = createBrowserRouter([
   {
     path: "/",
     element: <MainLayout></MainLayout>,
+    errorElement:<ErrorPage></ErrorPage>,
     children:[
       
       {
@@ -55,6 +57,7 @@ const router = createBrowserRouter([
   {
     path:"/dashboard",
     element:<PrivateRoutes><Dashboard></Dashboard></PrivateRoutes>,
+    errorElement:<ErrorPage></ErrorPage>,
     children:[
         
          {
